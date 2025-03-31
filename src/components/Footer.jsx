@@ -29,7 +29,7 @@ export function Footer() {
           <Link href="https://hookdeck.com/?ref=webhooksfyi" target="_sponsor">
             <a className="dark:text-slate-300">
               <span className="sr-only">ngrok</span>
-              <div className="flex flex-col items-center gap-2 space-x-2 sm:flex-row sm:gap-0">
+              <div className="flex flex-col items-center gap-0 space-x-2 sm:flex-row sm:gap-2">
                 <span className="flex-auto">Supported by</span>
                 <LogoSponsor className="flex-auto" />
               </div>
