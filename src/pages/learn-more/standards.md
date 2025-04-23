@@ -6,6 +6,12 @@ description: Learn more about the standardization efforts on webhook communicati
 Today, service providers take different approaches when designing and delivering webhooks, leading to inconsistency and complexity in the marketplace. 
 While we couldn't find an active standardization effort dedicated to webhooks, these projects can help standardize how webhooks — and events in general — are built, secured, and consumed, making it easier for both providers and consumers to integrate:
 
+## Standard Webhooks
+
+The Standard Webhooks specification is a set of conventions to be followed by webhook producers (senders) to provide webhook consumers (receivers) a secure, consistent, and interoperable interface for webhooks. The specification includes both requirements for any compatible implementation and recommendations that are not necessarily required for compatibility, but provide a better experience for the producers, consumers, or both.
+
+[Learn More >](https://www.standardwebhooks.com/)
+
 ## IETF HTTP Message Signatures
 
 HTTP Signatures describes a method of creating, encoding, and verifying signatures within HTTP requests. This spec can be used on various applications, including most webhook implementations (over 65% of the webhook implementations rely on signatures for authentication and message integrity). HTTP Signatures is one of the specs in progress under the [IETF HTTP Extensions Working Group](https://httpwg.org/http-extensions/).
