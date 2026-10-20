@@ -46,6 +46,7 @@ const navigation = [
       { title: 'Forward Compatibility', href: '/ops-experience/versioning' },
       { title: 'Zero Downtime Rotation', href: '/ops-experience/key-rotation' },
       { title: 'Multiple URLs', href: '/ops-experience/multiple-urls' },
+      { title: 'Testing and Local Development', href: '/ops-experience/testing' },
       { title: 'Documentation', href: '/ops-experience/documentation' },
     ],
   },
