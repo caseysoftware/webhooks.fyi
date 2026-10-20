@@ -33,6 +33,7 @@ const navigation = [
       { title: 'mTLS', href: '/security/end-to-end-encryption' },
       { title: 'Dataless notifications', href: '/security/dataless-notifications' },
       { title: 'Replay prevention', href: '/security/replay-prevention' },
+      { title: 'SSRF and Egress Security', href: '/security/ssrf' },
     ],
   },
   {
