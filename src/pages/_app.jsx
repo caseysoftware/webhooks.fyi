@@ -13,6 +13,7 @@ const navigation = [
     links: [
       { title: 'Overview', href: '/' },
       { title: 'What are webhooks?', href: '/docs/webhook-primer' },
+      { title: 'Glossary', href: '/docs/glossary' },
     ],
   },
   {
