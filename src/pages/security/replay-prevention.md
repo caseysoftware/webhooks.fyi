@@ -19,14 +19,17 @@ description: Learn how webhook providers leverage signed timestamps to mitigate 
 * **Examples**
 * - [8x8](https://developer.8x8.com/contactcenter/docs/verify-webhook-callbacks)
   - [Calendly](https://developer.calendly.com/api-docs/ZG9jOjM2MzE2MDM4-webhook-signatures)
-  - [Slack](https://api.slack.com/authentication/verifying-requests-from-slack)
-  - [PayPal](https://developer.paypal.com/api/rest/webhooks/#link-eventheadervalidation)
+  - [Slack](/webhook-directory/slack)
+  - [Stripe](/webhook-directory/stripe)
+  - [Zoom](/webhook-directory/zoom)
+  - [PayPal](https://developer.paypal.com/api/rest/webhooks/rest/)
   - [Zendesk](https://developer.zendesk.com/documentation/event-connectors/webhooks/verifying/)
   - [Keygen](https://keygen.sh/docs/api/signatures/#webhook-signatures)
+  - [Standard Webhooks](/learn-more/standards#standard-webhooks)
 {% /table %}
 ---
 
-Many webhook vendors use hashing and encryption to add security beyond authentication and message integrity. By combining message integrity with timestamps, providers offer a way to validate when calls are made and mitigate replay attacks. In our research, We saw the use of timestamps in conjunction with HMAC — i.e. [Calendly](https://developer.calendly.com/api-docs/ZG9jOjM2MzE2MDM4-webhook-signatures), Asymmetric Encryption - [PayPal](https://developer.paypal.com/api/rest/webhooks/#link-eventheadervalidation), and JWT/JWK/OAuth — [8x8](https://developer.8x8.com/contactcenter/docs/verify-webhook-callbacks). Timestamp generation and validation takes the following steps:
+Many webhook vendors use hashing and encryption to add security beyond authentication and message integrity. By combining message integrity with timestamps, providers offer a way to validate when calls are made and mitigate replay attacks. In our research, we saw the use of timestamps in conjunction with [HMAC](/security/hmac) — i.e. [Calendly](https://developer.calendly.com/api-docs/ZG9jOjM2MzE2MDM4-webhook-signatures), [Stripe](/webhook-directory/stripe), and [Slack](/webhook-directory/slack), [asymmetric signatures](/security/asymmetric-key-signatures) — [PayPal](https://developer.paypal.com/api/rest/webhooks/rest/), and [JWT/JWK/OAuth](/security/jwt-jwk-oauth2) — [8x8](https://developer.8x8.com/contactcenter/docs/verify-webhook-callbacks) and [Plaid](https://plaid.com/docs/api/webhooks/webhook-verification/). Timestamp generation and validation takes the following steps:
 
 On webhook requests, the provider:
 
@@ -36,17 +39,17 @@ On webhook requests, the provider:
 
 The webhook listener receives the request and:
 
-1. Extracts the timestamp — i.e., from the request header — and validates if the timestamp is within an acceptable timeframe (i.e., 3-5 minutes).
+1. Extracts the timestamp — i.e., from the request header — and validates if the timestamp is within an acceptable timeframe (i.e., 3-5 minutes) of the current time, in either direction.
 
     ```js
       ...
       const timestampHeader = 'Request-Timestamp'
       app.post('/webhook', (req, res) => {
-        // Request timestamp in unix date 1000;
+        // Request timestamp in unix date * 1000 (milliseconds)
         const requestTimestamp = req.get(timestampHeader) * 1000;
-        // Tolerance zone: 5 minutes ago
-        const tolerance = Date.now() - (5 * 60 * 1000);
-        if (requestTimestamp < tolerance) {
+        // Tolerance zone: 5 minutes before or after now
+        const tolerance = 5 * 60 * 1000;
+        if (!requestTimestamp || Math.abs(Date.now() - requestTimestamp) > tolerance) {
           // The request timestamp is outside of the tolerance zone.
           res.status(403).send('Request expired')
         }else{
@@ -65,7 +68,7 @@ The webhook listener receives the request and:
     const timestampHeader = 'Request-Timestamp'
     app.post('/webhook', (req, res) => {
       ...
-      if (requestTimestamp < tolerance) {
+      if (!requestTimestamp || Math.abs(Date.now() - requestTimestamp) > tolerance) {
         // The request timestamp is outside of the tolerance zone.
         ...
       }else{
@@ -100,4 +103,8 @@ The webhook listener receives the request and:
 
 - To ensure the timestamp validation works, you must keep your listener clock in sync with the webhook provider. The use of an NTP server should address this concern.
 
-- Some webhook providers — like [8x8](https://developer.8x8.com/contactcenter/docs/verify-webhook-callbacks) and [PayPal](https://developer.paypal.com/api/rest/webhooks/#link-eventheadervalidation) — also send unique ids per webhook notification. While this gives webhook consumers a way to ensure idempotency, it also requires consumers to store and keep track of webhook ids previously processed.
+- Tolerance windows vary by provider. [Slack](/webhook-directory/slack) recommends 5 minutes, and Stripe's SDKs default to 5 minutes. [Linear](https://linear.app/developers/webhooks) recommends one minute, and [Paddle](https://developer.paddle.com/webhooks/signature-verification)'s SDKs default to five seconds. Stripe warns that a tolerance of `0` disables the check entirely.
+
+- A timestamp tells you when the request was *signed*, not when the event happened. Stripe [generates a new timestamp and signature for each retry](https://docs.stripe.com/webhooks#preventing-replay-attacks), so a retried event still passes a 5-minute window. See [Retries and Timeouts](/ops-experience/retries).
+
+- Some webhook providers — like [8x8](https://developer.8x8.com/contactcenter/docs/verify-webhook-callbacks), [PayPal](https://developer.paypal.com/api/rest/webhooks/rest/), [GitHub](/webhook-directory/github) (`X-GitHub-Delivery`), and [Standard Webhooks](/learn-more/standards#standard-webhooks) implementations (`webhook-id`) — also send unique ids per webhook notification. Rejecting IDs you've already processed blocks replays even inside the tolerance window, and Mailgun suggests [caching each webhook's `token`](https://documentation.mailgun.com/docs/mailgun/user-manual/events/webhooks) for the same reason. This requires consumers to store and keep track of webhook ids previously processed — see [Idempotency and Duplicate Events](/ops-experience/idempotency).
