@@ -35,9 +35,18 @@ _Mutual TLS with request signature validation_
 
 ## Security at the transport layer
 
-Mutual TLS (mTLS) applies two-way encryption at the the transport layer. Like two-way SSL, mTLS works the same way with in most TCP communications, regardless of application-level protocol:
+Mutual TLS (mTLS) applies two-way authentication at the transport layer. Like two-way SSL, mTLS works the same way with in most TCP communications, regardless of application-level protocol:
 - Webhooks leverage mTLS for two-way encryption similarly to protocols like HTTPS, SQL, and SSH.
-- mTLS can be combined with other webhooks security controls, such as [HMAC](/security/hmac). However, in most cases, mTLS provides enough security to mitigate the use of additional webhook controls.
+- mTLS can be combined with other webhooks security controls, such as [HMAC](/security/hmac). [DocuSign](https://developers.docusign.com/platform/webhooks/mutual-tls), for example, supports both.
+
+## Where mTLS ends
+
+mTLS authenticates a *connection*, not a *message*. Once the TLS session is terminated — commonly at a load balancer, API gateway, or CDN in front of the listener — the application only sees a plain HTTP request, plus whatever headers the proxy chooses to forward about the client certificate. That has two consequences:
+
+- The application must trust the proxy to have validated the provider's certificate, and should reject requests that didn't arrive through it.
+- Nothing proves the payload wasn't changed between the proxy and the application, or after it was written to a queue. A signature — [HMAC](/security/hmac) or [asymmetric](/security/asymmetric-key-signatures) — travels with the message, so it can be verified anywhere, at any time.
+
+For most consumers, mTLS is defense in depth on top of signatures rather than a replacement for them.
 
 ## Drawbacks
 
