@@ -42,6 +42,7 @@ const navigation = [
       { title: 'Resiliency', href: '/ops-experience/resiliency' },
       { title: 'Retries and Timeouts', href: '/ops-experience/retries' },
       { title: 'Idempotency', href: '/ops-experience/idempotency' },
+      { title: 'Event Ordering', href: '/ops-experience/ordering' },
       { title: 'Forward Compatibility', href: '/ops-experience/versioning' },
       { title: 'Zero Downtime Rotation', href: '/ops-experience/key-rotation' },
       { title: 'Multiple URLs', href: '/ops-experience/multiple-urls' },
