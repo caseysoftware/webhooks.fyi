@@ -12,10 +12,12 @@ It serves both as a directory of webhook providers and a collection of best prac
 
 ## What should you expect to find?
 
-- [Webhook Directory](/docs/webhook-directory) lists different webhook implementations with their security and operational experience features
-- [Webhook Security](/security/intro) documents the approaches for securing webhooks
-- [Operational Experience](/ops-experience/intro) details features for better consuming and maintaining webhooks
+- [What are webhooks?](/docs/webhook-primer) and a [glossary](/docs/glossary) of common terms
+- [Webhook Directory](/docs/webhook-directory) lists different webhook implementations with their security and operational experience features, with detailed pages for providers like [GitHub](/webhook-directory/github), [Stripe](/webhook-directory/stripe), and [Slack](/webhook-directory/slack)
+- [Webhook Security](/security/intro) documents the approaches for securing webhooks, from [HMAC](/security/hmac) to [SSRF protection](/security/ssrf) for providers
+- [Operational Experience](/ops-experience/intro) details features for better consuming and maintaining webhooks, including [retries](/ops-experience/retries), [idempotency](/ops-experience/idempotency), and [local testing](/ops-experience/testing)
 - [Best Practices for webhook providers](/best-practices/webhook-providers) and [consumers](/best-practices/webhook-consumers)
+- [Standardization Efforts](/learn-more/standards) such as Standard Webhooks and RFC 9421
 
 ## Contributing to webhooks.fyi
 
