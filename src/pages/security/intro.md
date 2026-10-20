@@ -21,8 +21,15 @@ During our research, we found many different ways that providers provide securit
 - [Asymmetric Key Signatures](/security/asymmetric-key-signatures)
 - [JWTs, JWKs, and OAuth 2.0](/security/jwt-jwk-oauth2)
 - [Mutual TLS Authentication (mTLS)](/security/end-to-end-encryption)
+- [Dataless Notifications and Thin Events](/security/dataless-notifications)
 - [Replay Prevention](/security/replay-prevention)
+
+Not sure which method a provider uses? The [webhook directory](/docs/webhook-directory) lists the hash algorithm, encoding, and replay prevention for each one, and the [glossary](/docs/glossary#security) defines the terms used here.
 
 ## Compensatory Controls
 
 Webhook listeners can implement compensatory controls — such as IP restrictions and API callbacks to the webhook service — to increase the overall security of webhook communications. We will dive into compensatory controls under [Best practices for webhook consumers](/best-practices/webhook-consumers).
+
+## Protecting the Provider
+
+Webhook security runs both ways. Because consumers choose the destination URL, providers must keep their webhook system from being turned against their own infrastructure. See [SSRF and Egress Security](/security/ssrf).
