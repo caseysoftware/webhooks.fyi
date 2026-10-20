@@ -13,21 +13,24 @@ Slack uses outgoing webhooks to notify third-party apps of events such as messag
   - **[Replay Prevention](/security/replay-prevention)**: ✅
   - **[Forward Compatibility](/ops-experience/versioning)**: ✅
   - **[Zero Downtime Rotation](/ops-experience/key-rotation)**: ❌
+  - **[One Time Verification Challenge](/security/one-time-verification-challenge)**: ✅ (`url_verification` event when the Request URL is saved)
 ---
 * ## Supported Events
-* - **[Official Doc ↗](https://api.slack.com/events?filter=Events)**
+* - **[Official Doc ↗](https://docs.slack.dev/reference/events)**
 ---
 * ## Security Headers
 * - **Signature Header**: `X-Slack-Signature`
+  - **Signature Format**: `v0=<signature>`
   - **Hash**: sha256
   - **Encode**: hex
-  - **payload**: `v0:timestamp:request_body`
+  - **payload**: `v0:timestamp:request_body` (raw bytes)
   - **Timestamp Header**: `X-Slack-Request-Timestamp`
   - **Timestamp Format**: Unix Date
+  - **Timestamp Tolerance**: 5 minutes
 ---
 * ## Documentation
-* - [Official Doc ↗](https://api.slack.com/authentication/verifying-requests-from-slack)
-  - [Official SDKs ↗](https://api.slack.com/authentication/verifying-requests-from-slack#sdk_support)
+* - [Official Doc ↗](https://docs.slack.dev/authentication/verifying-requests-from-slack)
+  - [URL Verification Handshake ↗](https://docs.slack.dev/apis/events-api/using-http-request-urls)
 ---
 * ## SDKs and Sample Code
 * - [Slack Bolt SDK - JavaScript ↗](https://github.com/slackapi/bolt-js/blob/main/src/receivers/verify-request.ts)
@@ -39,32 +42,37 @@ Slack uses outgoing webhooks to notify third-party apps of events such as messag
 
 ## Sample Validation
 
+Slack signs the raw request body, which is JSON for Events API callbacks but form-encoded for slash commands and interactivity. Verify before parsing either format.
+
 ```js
 const crypto = require('crypto')
+const express = require('express')
+const app = express()
+
 const timeHeader = 'X-Slack-Request-Timestamp'
 const sigHeader = 'X-Slack-Signature'
 const hashAlgo = 'sha256'
 const encode = 'hex'
 const hmacSecret = process.env.WEBHOOK_SECRET
-app.post('/slack-webhook', (req, res) => {
-    //01: Validate replay prevention with 5 minute timeframe
-    const requestTimestamp = req.headers[timeHeader] * 1000;
-    const tolerance = Date.now() - (5 * 60 * 1000);
-    if (requestTimestamp < tolerance) {
-        res.status(403).send('Request expired')
-    }else{
-        //02: Validate signature
-        const message = `v0:${req.headers[timeHeader]}:${JSON.stringify(req.body)}`
-        const digest = "v0="+
-                       crypto.createHmac(hashAlgo, hmacSecret)
-                       .update(message)
-                       .digest(encode)
-        if (request.headers[sigHeader] !== digest) {
-            res.status(401).send('Request unauthorized')
-        }else{
-            //03: Process message
-            res.json({ message: "Success" })
-        }
+
+// Capture the raw body for any content type
+app.post('/slack-webhook', express.raw({ type: '*/*' }), (req, res) => {
+    //01: Validate replay prevention with 5 minute timeframe (past or future)
+    const timestamp = req.get(timeHeader)
+    if (!timestamp || Math.abs(Date.now() - timestamp * 1000) > 5 * 60 * 1000) {
+        return res.status(403).send('Request expired')
     }
+    //02: Validate signature
+    const message = `v0:${timestamp}:${req.body.toString('utf8')}`
+    const digest = Buffer.from("v0=" +
+                   crypto.createHmac(hashAlgo, hmacSecret)
+                   .update(message)
+                   .digest(encode), 'utf8')
+    const providerSig = Buffer.from(req.get(sigHeader) || '', 'utf8')
+    if (providerSig.length !== digest.length || !crypto.timingSafeEqual(digest, providerSig)) {
+        return res.status(401).send('Request unauthorized')
+    }
+    //03: Process message
+    res.json({ message: "Success" })
 })
 ```
