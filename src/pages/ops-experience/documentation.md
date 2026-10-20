@@ -18,7 +18,7 @@ Delightful developer and ops experience starts with docs that are easy to unders
 * - [Square](https://developer.squareup.com/docs/webhooks/v2webhook-events-tech-ref)
   - [GitHub](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads)
 ---
-* (If one time verification check exists), how to perform the verification
+* (If [one time verification](/security/one-time-verification-challenge) check exists), how to perform the verification
 * - [Okta](https://developer.okta.com/docs/concepts/event-hooks/#one-time-verification-request) 
   - [Microsoft OneDrive](https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/webhook-receiver-validation-request?view=odsp-graph-online)
 ---
@@ -30,7 +30,7 @@ Delightful developer and ops experience starts with docs that are easy to unders
   - [Calendly](https://developer.calendly.com/api-docs/ZG9jOjM2MzE2MDM4-webhook-signatures)
 ---
 * The journey (steps) for receiving, validating, and processing webhook events
-* - [Stripe](https://shopify.dev/apps/webhooks/configuration/https#step-1-register-an-endpoint)
+* - [Shopify](https://shopify.dev/apps/webhooks/configuration/https#step-1-register-an-endpoint)
   - [Square](https://developer.squareup.com/docs/webhooks/overview#related-topics)
 ---
 * Example payloads 
@@ -42,9 +42,17 @@ Delightful developer and ops experience starts with docs that are easy to unders
 * - [Buildkite](https://buildkite.com/docs/apis/webhooks#example-implementations) 
   - [Zoom](https://github.com/zoom/webhook-sample-node.js)
 ---
-* How to operate and & retry when webhook messages are lost (i.e. due to outages)
-* - [Stripe](https://stripe.com/docs/webhooks/best-practices#events-and-retries)
+* How to operate & [retry](/ops-experience/retries) when webhook messages are lost (i.e. due to outages)
+* - [Stripe](https://docs.stripe.com/webhooks#event-delivery-behaviors)
   - [BigCommerce](https://developer.bigcommerce.com/api-docs/store-management/webhooks/about-webhooks#callback-retry-mechanism)
+---
+* Delivery guarantees: timeouts, [duplicates](/ops-experience/idempotency), and [ordering](/ops-experience/ordering)
+* - [Okta](https://developer.okta.com/docs/concepts/event-hooks/)
+  - [Stripe](https://docs.stripe.com/webhooks#event-ordering)
+---
+* How to test webhooks [locally](/ops-experience/testing) and trigger sample events
+* - [Stripe](https://docs.stripe.com/webhooks#test-webhook)
+  - [Shopify](https://shopify.dev/docs/api/shopify-cli/app/app-webhook-trigger)
 ---
 * Information that can enable compensatory controls, such as list of IPs for firewall rules
 * - [Brex](https://developer.brex.com/docs/webhooks/#ip-whitelisting)
@@ -52,4 +60,6 @@ Delightful developer and ops experience starts with docs that are easy to unders
 {% /table %}
 
 
-Unfortunately, we found webhook documentation that makes knowledge assumptions, skips steps, and consistently delivers incomplete code snippets. About 10% of the webhooks we've seen missed critical information in their docs — including lack of the encoding format (base64 or hex), the signature date format (Unix or RFC 3339), and hash signature payload instructions. To overcome incomplete docs, we spent significant time performing guesswork, scraping the internet, and unit testing webhooks until we found something that worked. While we were motivated to continue digging and researching to get the correct answer, many developers would have skipped verifying webhooks out of frustration.
+Providers can also publish machine-readable descriptions of every event using the `webhooks` field in [OpenAPI 3.1](/learn-more/standards#openapi-and-asyncapi), which lets consumers generate types and validators instead of copying payloads by hand.
+
+Unfortunately, we found webhook documentation that makes knowledge assumptions, skips steps, and consistently delivers incomplete code snippets. About 10% of the webhooks we've seen missed critical information in their docs — including lack of the encoding format (base64 or hex), the signature date format (Unix or RFC 3339), and hash signature payload instructions — the details we now track in the [webhook directory](/docs/webhook-directory). To overcome incomplete docs, we spent significant time performing guesswork, scraping the internet, and unit testing webhooks until we found something that worked. While we were motivated to continue digging and researching to get the correct answer, many developers would have skipped verifying webhooks out of frustration.
