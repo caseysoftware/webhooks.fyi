@@ -40,6 +40,7 @@ const navigation = [
     links: [
       { title: 'Introduction', href: '/ops-experience/intro' },
       { title: 'Resiliency', href: '/ops-experience/resiliency' },
+      { title: 'Retries and Timeouts', href: '/ops-experience/retries' },
       { title: 'Forward Compatibility', href: '/ops-experience/versioning' },
       { title: 'Zero Downtime Rotation', href: '/ops-experience/key-rotation' },
       { title: 'Multiple URLs', href: '/ops-experience/multiple-urls' },
