@@ -60,6 +60,6 @@ Delightful developer and ops experience starts with docs that are easy to unders
 {% /table %}
 
 
-Providers can also publish machine-readable descriptions of every event using the `webhooks` field in [OpenAPI 3.1](/learn-more/standards#openapi-and-asyncapi), which lets consumers generate types and validators instead of copying payloads by hand.
+Providers can also publish machine-readable descriptions of every event using the `webhooks` field in [OpenAPI 3.1](/learn-more/standards#open-api-and-async-api), which lets consumers generate types and validators instead of copying payloads by hand.
 
 Unfortunately, we found webhook documentation that makes knowledge assumptions, skips steps, and consistently delivers incomplete code snippets. About 10% of the webhooks we've seen missed critical information in their docs — including lack of the encoding format (base64 or hex), the signature date format (Unix or RFC 3339), and hash signature payload instructions — the details we now track in the [webhook directory](/docs/webhook-directory). To overcome incomplete docs, we spent significant time performing guesswork, scraping the internet, and unit testing webhooks until we found something that worked. While we were motivated to continue digging and researching to get the correct answer, many developers would have skipped verifying webhooks out of frustration.

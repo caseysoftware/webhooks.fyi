@@ -16,7 +16,7 @@ description: Learn how webhook providers use OAuth, JSON Web Tokens (JWTs), and 
 ---
 * **Caveats**
 * - High complexity
-  - Outside of the [OpenID Shared Signals Framework](/learn-more/standards#openid-shared-signals-framework-ssf), each provider uses JWTs, JWKs, and OAuth in its own way
+  - Outside of the [OpenID Shared Signals Framework](/learn-more/standards#open-id-shared-signals-framework-ssf), each provider uses JWTs, JWKs, and OAuth in its own way
 ---
 * **Examples**
 * - [Akamai/Janrain](https://janrain-education-center.knowledgeowl.com/home/json-web-keys)
@@ -40,4 +40,4 @@ Webhook providers such as SendGrid, Wix, and Brex use security methods and proto
 
 ## A standard approach: Security Event Tokens
 
-The [OpenID Shared Signals Framework](/learn-more/standards#openid-shared-signals-framework-ssf), finalized in 2025, builds on IETF standards for exactly this pattern: events are Security Event Tokens ([RFC 8417](https://www.rfc-editor.org/rfc/rfc8417.html)) — signed JWTs — pushed to the receiver over HTTP ([RFC 8935](https://www.rfc-editor.org/rfc/rfc8935.html)), with keys published as JWKs. While SSF targets security events between identity providers and applications, it's the most complete standard for JWT-based webhooks today.
+The [OpenID Shared Signals Framework](/learn-more/standards#open-id-shared-signals-framework-ssf), finalized in 2025, builds on IETF standards for exactly this pattern: events are Security Event Tokens ([RFC 8417](https://www.rfc-editor.org/rfc/rfc8417.html)) — signed JWTs — pushed to the receiver over HTTP ([RFC 8935](https://www.rfc-editor.org/rfc/rfc8935.html)), with keys published as JWKs. While SSF targets security events between identity providers and applications, it's the most complete standard for JWT-based webhooks today.
