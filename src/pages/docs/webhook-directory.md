@@ -54,6 +54,7 @@ Each column links to the topic it measures. **Hash Algorithm** and **Encode** de
   {% webhook-entry provider="HubSpot V3" hash="sha256" encode="base64" rotation="❌" versioning="✅" timestamp="✅" link="https://developers.hubspot.com/docs/api/webhooks/validating-requests" /%}
   {% webhook-entry provider="Hygraph (GraphCMS)" hash="sha256" encode="base64" rotation="❌" versioning="❌" timestamp="✅" link="https://graphcms.com/docs/api-reference/basics/webhooks" /%}
   {% webhook-entry provider="Intercom" hash="sha1" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://developers.intercom.com/intercom-api-reference/v1.0/reference/signed-notifications" /%}
+  {% webhook-entry provider="Intuit QuickBooks" hash="sha256" encode="base64" rotation="❌" versioning="❌" timestamp="❌" link="https://developer.intuit.com/app/developer/qbo/docs/develop/webhooks" /%}
   {% webhook-entry provider="Keygen" hash="sha256" encode="base64" rotation="❌" versioning="✅" timestamp="✅" link="https://keygen.sh/docs/api/webhooks/" /%}
   {% webhook-entry provider="LaunchDarkly" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://docs.launchdarkly.com/home/connecting/webhooks" /%}
   {% webhook-entry provider="Linear" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="✅" link="https://linear.app/developers/webhooks" /%}
