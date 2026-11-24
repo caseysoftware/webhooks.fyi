@@ -27,6 +27,7 @@ Each column links to the topic it measures. **Hash Algorithm** and **Encode** de
   {% webhook-entry provider="Castle" hash="sha256" encode="base64" rotation="❌" versioning="❌" timestamp="❌" link="https://docs.castle.io/docs/subscribe-to-webhooks" /%}
   {% webhook-entry provider="Checkout.com" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://www.checkout.com/docs/developer-resources/event-notifications/receive-webhooks" /%}
   {% webhook-entry provider="CircleCI" hash="sha256" encode="hex" rotation="❌" versioning="✅" timestamp="❌" link="https://circleci.com/docs/2.0/webhooks/" /%}
+  {% webhook-entry provider="Clerk" hash="sha256" encode="base64" rotation="✅" versioning="✅" timestamp="✅" link="https://clerk.com/docs/guides/development/webhooks/overview" /%}
   {% webhook-entry provider="Coinbase" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://docs.cloud.coinbase.com/commerce/docs/webhooks-security" /%}
   {% webhook-entry provider="ConfigCat" hash="sha256" encode="base64" rotation="✅" versioning="✅" timestamp="✅" link="https://configcat.com/docs/advanced/notifications-webhooks/#verifying-webhook-requests" /%}
   {% webhook-entry provider="Contentful" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="✅" link="https://www.contentful.com/developers/docs/concepts/webhooks/" /%}
