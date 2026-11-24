@@ -40,6 +40,7 @@ Each column links to the topic it measures. **Hash Algorithm** and **Encode** de
   {% webhook-entry provider="FastSpring" hash="sha256" encode="base64" rotation="❌" versioning="❌" timestamp="❌" link="https://developer.fastspring.com/docs/webhooks-overview" /%}
   {% webhook-entry provider="Fivetran" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://fivetran.com/docs/developer-resources/webhooks" /%}
   {% webhook-entry provider="Frame.io" hash="sha256" encode="base64" rotation="❌" versioning="✅" timestamp="✅" link="https://developer.frame.io/docs/automations-webhooks/webhooks-overview" /%}
+  {% webhook-entry provider="Front" hash="sha256" encode="base64" rotation="❌" versioning="❌" timestamp="✅" link="https://dev.frontapp.com/docs/application-webhooks" /%}
   {% webhook-entry provider="GitHub" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="/webhook-directory/github" /%}
   {% webhook-entry provider="GitLab" hash="sha256" encode="base64" rotation="❌" versioning="✅" timestamp="✅" link="https://docs.gitlab.com/user/project/integrations/webhooks/" /%}
   {% webhook-entry provider="Heroku" hash="sha256" encode="base64" rotation="❌" versioning="❌" timestamp="❌" link="https://devcenter.heroku.com/articles/app-webhooks" /%}
