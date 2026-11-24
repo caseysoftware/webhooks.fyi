@@ -17,6 +17,7 @@ Each column links to the topic it measures. **Hash Algorithm** and **Encode** de
   {% webhook-entry provider="Asana" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://developers.asana.com/docs/webhooks-guide" /%}
   {% webhook-entry provider="Autodesk Forge" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://forge.autodesk.com/en/docs/webhooks/v1/developers_guide/overview/" /%}
   {% webhook-entry provider="BambooHR" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="✅" link="https://documentation.bamboohr.com/docs/webhooks" /%}
+  {% webhook-entry provider="BigCommerce" hash="sha256" encode="base64" rotation="❌" versioning="✅" timestamp="✅" link="https://docs.bigcommerce.com/developer/docs/integrations/webhooks/https" /%}
   {% webhook-entry provider="Bitbucket" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://confluence.atlassian.com/bitbucketserver/manage-webhooks-938025878.html#Managewebhooks-webhooksecrets" /%}
   {% webhook-entry provider="Bolt" hash="sha256" encode="base64" rotation="❌" versioning="❌" timestamp="❌" link="https://help.bolt.com/developers/guides/webhooks/hook-verification/" /%}
   {% webhook-entry provider="Box" hash="sha256" encode="base64" rotation="✅" versioning="✅" timestamp="✅" link="https://developer.box.com/guides/webhooks/v2/signatures-v2/" /%}
