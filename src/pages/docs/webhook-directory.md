@@ -58,6 +58,7 @@ Each column links to the topic it measures. **Hash Algorithm** and **Encode** de
   {% webhook-entry provider="Jira" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://developer.atlassian.com/cloud/jira/platform/webhooks/#secure-admin-webhooks" /%}
   {% webhook-entry provider="Keygen" hash="sha256" encode="base64" rotation="❌" versioning="✅" timestamp="✅" link="https://keygen.sh/docs/api/webhooks/" /%}
   {% webhook-entry provider="LaunchDarkly" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://docs.launchdarkly.com/home/connecting/webhooks" /%}
+  {% webhook-entry provider="Lemon Squeezy" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://docs.lemonsqueezy.com/help/webhooks/signing-requests" /%}
   {% webhook-entry provider="Linear" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="✅" link="https://linear.app/developers/webhooks" /%}
   {% webhook-entry provider="Lob" hash="sha256" encode="hex" rotation="❌" versioning="✅" timestamp="✅" link="https://help.lob.com/print-and-mail/getting-data-and-results/using-webhooks#security-9" /%}
   {% webhook-entry provider="Mailchimp" hash="sha1" encode="base64" rotation="❌" versioning="❌" timestamp="❌" link="https://mailchimp.com/developer/transactional/guides/track-respond-activity-webhooks/#authenticating-webhook-requests" /%}

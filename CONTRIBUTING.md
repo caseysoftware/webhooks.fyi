@@ -43,7 +43,6 @@ We didn't get to add every webhook we wanted! Here are some we'd love to include
 1. Snyk - https://docs.snyk.io/integrations/snyk-webhooks
 1. Trello - https://developer.atlassian.com/cloud/trello/guides/rest-api/webhooks/
 1. VMWare Workspace One - https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/services/System_Settings_On_Prem/GUID-AWT-SYSTEM-ADVANCED-API-NOTIF.html
-1. Lemon Squeezy
 1. Microsoft Graph - https://learn.microsoft.com/en-us/graph/change-notifications-delivery-webhooks
 1. Postmark
 1. Razorpay
