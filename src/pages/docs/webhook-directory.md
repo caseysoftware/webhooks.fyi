@@ -78,6 +78,7 @@ Each column links to the topic it measures. **Hash Algorithm** and **Encode** de
   {% webhook-entry provider="Plaid" hash="es256 (JWT)" encode="base64url" rotation="✅" versioning="❌" timestamp="✅" link="https://plaid.com/docs/api/webhooks/webhook-verification/" /%}
   {% webhook-entry provider="Pusher" hash="sha1" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://pusher.com/docs/beams/concepts/webhooks/" /%}
   {% webhook-entry provider="Razorpay" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://razorpay.com/docs/webhooks/validate-test/" /%}
+  {% webhook-entry provider="Resend" hash="sha256" encode="base64" rotation="✅" versioning="✅" timestamp="✅" link="https://resend.com/docs/webhooks/verify-webhooks-requests" /%}
   {% webhook-entry provider="SendGrid" hash="ecdsa" encode="base64" rotation="❌" versioning="❌" timestamp="✅" link="https://www.twilio.com/docs/sendgrid/for-developers/tracking-events/getting-started-event-webhook-security-features" /%}
   {% webhook-entry provider="Sentry" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="✅" link="https://docs.sentry.io/product/integrations/integration-platform/webhooks/#sentry-hook-signature" /%}
   {% webhook-entry provider="Shopify" hash="sha256" encode="base64" rotation="❌" versioning="❌" timestamp="❌" link="https://shopify.dev/apps/webhooks/configuration/https#step-5-verify-the-webhook" /%}
