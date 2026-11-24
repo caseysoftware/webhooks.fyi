@@ -25,7 +25,6 @@ Note: We want easily observable facts, not subjective ratings of webhooks, APIs,
 
 We didn't get to add every webhook we wanted! Here are some we'd love to include. Pull requests welcome!
 
-1. 8x8 - https://developer.8x8.com/contactcenter/docs/verify-webhook-callbacks
 1. Active Campaign - https://www.activecampaign.com/blog/working-with-webhook-data
 1. Adobe Acrobat Sign (both approaches) - https://helpx.adobe.com/sign/using/adobe-sign-webhooks-api.html &
 1. Aftership - https://developers.aftership.com/reference/check-signatures

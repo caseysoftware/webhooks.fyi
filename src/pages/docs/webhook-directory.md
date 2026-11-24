@@ -10,6 +10,7 @@ New webhooks are created and improved every day. Please [contribute](/docs/how-t
 Each column links to the topic it measures. **Hash Algorithm** and **Encode** describe the signature — most providers use [HMAC](/security/hmac), while `ed25519`, `ecdsa`, and `rsa` indicate [asymmetric signatures](/security/asymmetric-key-signatures) and `JWT` indicates [JWTs and JWKs](/security/jwt-jwk-oauth2). Providers linked without ↗ have a detailed page on webhooks.fyi with headers, signed content, and sample validation code.
 
 {% webhook %}
+  {% webhook-entry provider="8x8 Contact Center" hash="rs256 (JWS)" encode="base64url" rotation="✅" versioning="❌" timestamp="✅" link="https://developer.8x8.com/contactcenter/docs/verify-webhook-callbacks" /%}
   {% webhook-entry provider="Airship" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="✅" link="https://support.airship.com/hc/en-us/articles/360032501831-Implementing-a-Signature-Hash-and-Validating-an-Open-Channel-Webhook" /%}
   {% webhook-entry provider="Asana" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://developers.asana.com/docs/webhooks-guide" /%}
   {% webhook-entry provider="Autodesk Forge" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://forge.autodesk.com/en/docs/webhooks/v1/developers_guide/overview/" /%}
