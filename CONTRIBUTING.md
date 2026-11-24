@@ -28,7 +28,6 @@ We didn't get to add every webhook we wanted! Here are some we'd love to include
 1. Active Campaign - https://www.activecampaign.com/blog/working-with-webhook-data
 1. Adobe Acrobat Sign (both approaches) - https://helpx.adobe.com/sign/using/adobe-sign-webhooks-api.html &
 1. Akamai Identity Cloud - https://janrain-education-center.knowledgeowl.com/home/json-web-keys
-1. Atlassian Jira - https://developer.atlassian.com/server/jira/platform/webhooks/#overview
 1. Atlassian Statuspage - https://support.atlassian.com/statuspage/docs/enable-webhook-notifications/
 1. Auth0 Log Streams - https://auth0.com/docs/customize/log-streams/custom-log-streams
 1. Basecamp - https://github.com/basecamp/bc3-api/blob/241525d3835c10d377f1d8f654726c559c25be50/sections/webhooks.md
