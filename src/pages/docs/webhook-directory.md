@@ -87,6 +87,7 @@ Each column links to the topic it measures. **Hash Algorithm** and **Encode** de
   {% webhook-entry provider="Slack" hash="sha256" encode="hex" rotation="❌" versioning="✅" timestamp="✅" link="/webhook-directory/slack" /%}
   {% webhook-entry provider="Smartsheet" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://smartsheet.redoc.ly/tag/webhooksDescription" /%}
   {% webhook-entry provider="SmartThings" hash="rsa-sha256" encode="base64" rotation="✅" versioning="❌" timestamp="✅" link="https://developer.smartthings.com/docs/connected-services/hosting/webhook-smartapp" /%}
+  {% webhook-entry provider="Snyk" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://docs.snyk.io/developer-tools/snyk-api/using-specific-snyk-apis/webhooks-apis/validation-and-versioning-of-payloads" /%}
   {% webhook-entry provider="Sonatype Nexus" hash="sha1" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://help.sonatype.com/repomanager3/integrations/webhooks/working-with-hmac-payloads" /%}
   {% webhook-entry provider="Square" hash="sha256" encode="base64" rotation="❌" versioning="❌" timestamp="❌" link="https://developer.squareup.com/docs/webhooks/step3validate" /%}
   {% webhook-entry provider="Stripe" hash="sha256" encode="hex" rotation="✅" versioning="✅" timestamp="✅" link="/webhook-directory/stripe" /%}
