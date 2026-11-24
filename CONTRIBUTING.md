@@ -27,7 +27,6 @@ We didn't get to add every webhook we wanted! Here are some we'd love to include
 
 1. Active Campaign - https://www.activecampaign.com/blog/working-with-webhook-data
 1. Adobe Acrobat Sign (both approaches) - https://helpx.adobe.com/sign/using/adobe-sign-webhooks-api.html &
-1. Aftership - https://developers.aftership.com/reference/check-signatures
 1. Akamai Identity Cloud - https://janrain-education-center.knowledgeowl.com/home/json-web-keys
 1. Atlassian Jira - https://developer.atlassian.com/server/jira/platform/webhooks/#overview
 1. Atlassian Statuspage - https://support.atlassian.com/statuspage/docs/enable-webhook-notifications/
