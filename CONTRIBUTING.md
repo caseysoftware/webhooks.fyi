@@ -34,7 +34,6 @@ We didn't get to add every webhook we wanted! Here are some we'd love to include
 1. Basecamp - https://github.com/basecamp/bc3-api/blob/241525d3835c10d377f1d8f654726c559c25be50/sections/webhooks.md
 1. Crowdstrike Orchestrator - https://www.crowdstrike.com/resources/videos/falcon-orchestrator-demo-with-evan-burns/
 1. Datadog - https://docs.datadoghq.com/integrations/webhooks/
-1. Fivetran - https://fivetran.com/docs/rest-api/webhooks#signing
 1. Front - https://dev.frontapp.com/docs/webhooks-1
 1. Goldman Sachs Dev - https://developer.gs.com/docs/services/transaction-banking/webhooks-auth/
 1. Greenhouse - https://developers.greenhouse.io/webhooks.html#creating-a-web-hook
