@@ -98,6 +98,7 @@ Each column links to the topic it measures. **Hash Algorithm** and **Encode** de
   {% webhook-entry provider="Twilio" hash="sha1" encode="base64" rotation="❌" versioning="❌" timestamp="❌" link="/webhook-directory/twilio" /%}
   {% webhook-entry provider="Twitch EventSub" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="✅" link="https://dev.twitch.tv/docs/eventsub/handling-webhook-events/" /%}
   {% webhook-entry provider="Typeform" hash="sha256" encode="base64" rotation="❌" versioning="❌" timestamp="❌" link="https://developer.typeform.com/webhooks/secure-your-webhooks/" /%}
+  {% webhook-entry provider="Vercel" hash="sha1" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://vercel.com/docs/webhooks" /%}
   {% webhook-entry provider="WorkOS" hash="sha256" encode="hex" rotation="❌" versioning="✅" timestamp="✅" link="https://workos.com/docs/events/data-syncing/webhooks" /%}
   {% webhook-entry provider="X (Twitter) Account Activity API" hash="sha256" encode="base64" rotation="❌" versioning="❌" timestamp="✅" link="https://docs.x.com/x-api/webhooks/introduction" /%}
   {% webhook-entry provider="Xero" hash="sha256" encode="base64" rotation="❌" versioning="❌" timestamp="❌" link="https://developer.xero.com/documentation/guides/webhooks/configuring-your-server#intent-to-receive" /%}
