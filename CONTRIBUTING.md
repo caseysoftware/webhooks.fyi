@@ -45,6 +45,5 @@ We didn't get to add every webhook we wanted! Here are some we'd love to include
 1. VMWare Workspace One - https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/services/System_Settings_On_Prem/GUID-AWT-SYSTEM-ADVANCED-API-NOTIF.html
 1. Microsoft Graph - https://learn.microsoft.com/en-us/graph/change-notifications-delivery-webhooks
 1. Postmark
-1. Razorpay
 1. Resend
 1. Vercel
