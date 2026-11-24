@@ -38,7 +38,6 @@ We didn't get to add every webhook we wanted! Here are some we'd love to include
 1. Okta	- Event Hooks - https://developer.okta.com/docs/concepts/event-hooks/#one-time-verification-request
 1. Olark - https://www.olark.com/help/webhooks
 1. One Drive - https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/webhook-receiver-validation-request?view=odsp-graph-online
-1. SmartThings - https://developer-preview.smartthings.com/docs/connected-services/hosting/webhook-smartapp/
 1. Snyk - https://docs.snyk.io/integrations/snyk-webhooks
 1. Trello - https://developer.atlassian.com/cloud/trello/guides/rest-api/webhooks/
 1. VMWare Workspace One - https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/services/System_Settings_On_Prem/GUID-AWT-SYSTEM-ADVANCED-API-NOTIF.html
