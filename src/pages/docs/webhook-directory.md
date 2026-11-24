@@ -46,6 +46,7 @@ Each column links to the topic it measures. **Hash Algorithm** and **Encode** de
   {% webhook-entry provider="GoCardless" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://docs.gocardless.com/docs/api-reference/webhooks" /%}
   {% webhook-entry provider="Goldman Sachs Transaction Banking" hash="rsa-sha256" encode="base64url" rotation="✅" versioning="❌" timestamp="✅" link="https://developer.gs.com/docs/services/transaction-banking/webhooks-auth/" /%}
   {% webhook-entry provider="Greenhouse" hash="sha256" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://developers.greenhouse.io/webhooks.html" /%}
+  {% webhook-entry provider="HCP Terraform" hash="sha512" encode="hex" rotation="❌" versioning="❌" timestamp="❌" link="https://developer.hashicorp.com/terraform/cloud-docs/api-docs/notification-configurations#notification-authenticity" /%}
   {% webhook-entry provider="Heroku" hash="sha256" encode="base64" rotation="❌" versioning="❌" timestamp="❌" link="https://devcenter.heroku.com/articles/app-webhooks" /%}
   {% webhook-entry provider="Hookdeck" hash="sha256" encode="base64" rotation="✅" versioning="❌" timestamp="❌" link="https://hookdeck.com/docs/introduction" /%}
   {% webhook-entry provider="HubSpot V1" hash="sha256" encode="hex" rotation="❌" versioning="✅" timestamp="❌" link="https://developers.hubspot.com/docs/api/webhooks/validating-requests" /%}

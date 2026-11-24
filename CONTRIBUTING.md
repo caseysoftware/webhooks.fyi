@@ -42,7 +42,6 @@ We didn't get to add every webhook we wanted! Here are some we'd love to include
 1. Segment - https://segment.com/docs/connections/destinations/catalog/webhooks/#appendices
 1. SmartThings - https://developer-preview.smartthings.com/docs/connected-services/hosting/webhook-smartapp/
 1. Snyk - https://docs.snyk.io/integrations/snyk-webhooks
-1. Terraform Cloud - https://www.terraform.io/cloud-docs/workspaces/settings/notifications
 1. Trello - https://developer.atlassian.com/cloud/trello/guides/rest-api/webhooks/
 1. VMWare Workspace One - https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/services/System_Settings_On_Prem/GUID-AWT-SYSTEM-ADVANCED-API-NOTIF.html
 1. Intuit QuickBooks
